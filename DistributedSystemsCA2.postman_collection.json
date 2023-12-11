@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "e14d3a7e-3e75-466e-980c-4773ca321da4",
+		"name": "DistributedSystemsCA2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30395215"
+	},
+	"item": [
+		{
+			"name": "UserCRUD",
+			"item": [
+				{
+					"name": "/api/users/home",
+					"request": {
+						"auth": {
+							"type": "basic"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/home",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Najla\",\r\n  \"password\": \"123456\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Naj",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/getUserData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/getUserData?username=NajlaA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"getUserData"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "NajlaA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/deleteUserData",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/deleteUserData?username=Naj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"deleteUserData"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Naj"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/users/updateUserData",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Najla\",\r\n    \"password\": \"123456g\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/updateUserData?username=Najla",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"updateUserData"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Najla"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "XMLCRUD",
+			"item": [
+				{
+					"name": "/api/data{category}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/data?category=Memo items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "M.IB.Aviation",
+									"disabled": true
+								},
+								{
+									"key": "catergory",
+									"value": "\"4.D.\"",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "Memo items"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/dataALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/data/category=Totalw.LULUCF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data",
+								"category=Totalw.LULUCF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/data{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/data/category=Totalw.LULUCF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data",
+								"category=Totalw.LULUCF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/parse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"description\": \"House Loan\",\r\n        \"loanAmount\": 30000.0,\r\n        \"totalLoanAmount\": 30000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Loans/rest/loans/71",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Loans",
+								"rest",
+								"loans",
+								"71"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/data/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"1.\",\r\n    \"gasUnits\": \"Total ESD GHGs (ktCO2e)\",\r\n    \"value\": 23662.768390819,\r\n    \"description\": \"1 - Naj\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/data/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/deleteALL",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<loan>\r\n    <description>Phone Loan</description>\r\n    <loanAmount>300.0</loanAmount>\r\n    <totalLoanAmount>300.0</totalLoanAmount>\r\n</loan>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/deleteALL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteALL"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/delete/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<loan>\r\n    <description>Phone Loan</description>\r\n    <loanAmount>300.0</loanAmount>\r\n    <totalLoanAmount>300.0</totalLoanAmount>\r\n</loan>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/deleteALL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteALL"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/update/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"1.A.\",\r\n    \"gasUnits\": \"CO2 (kt)\",\r\n    \"value\": 38734.93302176,\r\n    \"description\": \"1 - Energy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/data/27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"data",
+								"27"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JSONCRUD",
+			"item": [
+				{
+					"name": "/apiJson/data{category}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiJson/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiJson",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/apiJson/dataALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiJson/data/all?username=NajlaA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiJson",
+								"data",
+								"all"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "NajlaA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/apiJson/data{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/apiJson/data/category=Totalw.LULUCF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiJson",
+								"data",
+								"category=Totalw.LULUCF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/apiJson/parse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"description\": \"House Loan\",\r\n        \"loanAmount\": 30000.0,\r\n        \"totalLoanAmount\": 30000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Loans/rest/loans/71",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Loans",
+								"rest",
+								"loans",
+								"71"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/apiJson/deleteALL",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<loan>\r\n    <description>Phone Loan</description>\r\n    <loanAmount>300.0</loanAmount>\r\n    <totalLoanAmount>300.0</totalLoanAmount>\r\n</loan>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apiJson/deleteALL?username=NajlaA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiJson",
+								"deleteALL"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "NajlaA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/apiJson/delete/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<loan>\r\n    <description>Phone Loan</description>\r\n    <loanAmount>300.0</loanAmount>\r\n    <totalLoanAmount>300.0</totalLoanAmount>\r\n</loan>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apiJson/delete/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiJson",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/apiJson/update/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Test Loan3\",\r\n    \"loanAmount\": 290.0,\r\n    \"totalLoanAmount\": 300.0,\r\n    \"deposits\": [\r\n        {\r\n            \"depositDate\": \"26/01/2023\",\r\n            \"amount\": 10.0\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/apiJson/update/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"apiJson",
+								"update",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
