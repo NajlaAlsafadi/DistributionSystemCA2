@@ -42,9 +42,10 @@ public class XmlDataService {
 		while (m.find()) {
 			String description = m.group(1);
 			String number = description.split(" ")[0];
-			if (category.contains(number)) {
-				return description;
-			}
+			 if (category.equals(number + ".") || category.equals(number)) {
+	            	System.out.println("Found description: " + description);
+	                return description;
+	            }
 
 		}
 

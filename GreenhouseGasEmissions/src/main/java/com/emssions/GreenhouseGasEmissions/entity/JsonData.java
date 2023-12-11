@@ -14,15 +14,18 @@ public class JsonData {
     private String category;
     private String gasUnits;
     private Double value;
+    private String description;
+
 
     public JsonData() {
         // Default constructor
     }
 
-    public JsonData(String category, String gasUnits, Double value) {
+    public JsonData(String category, String gasUnits, Double value, String description) {
         this.category = category;
         this.gasUnits = gasUnits;
         this.value = value;
+        this.description = description;
     }
 
 
@@ -58,6 +61,11 @@ public class JsonData {
         this.value = value;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
-
