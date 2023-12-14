@@ -3,7 +3,10 @@ package com.emssions.GreenhouseGasEmissions.controller;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.emssions.GreenhouseGasEmissions.entity.User;
 import com.emssions.GreenhouseGasEmissions.service.UserService;
@@ -21,10 +24,9 @@ public class UserController {
   		return "Welcome to spring boot reg proccess";
   	}
 
-    @PostMapping("/register")
-    public String registerUser(@RequestBody User user) {
-        userService.registerUser(user);
-        return "User registered successfully!";
+  	@PostMapping("/register")
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
+        return userService.registerUser(user);
     }
 
     @PostMapping("/login")
@@ -33,16 +35,16 @@ public class UserController {
     }
     
     @GetMapping("/getUserData")
-    public String getUserData(@RequestParam String username) {
+    public User getUserData(@RequestParam String username) {
         if (userService.isUserLoggedIn(username)) {
             User user = userService.getUserByUsername(username);
             if (user != null) {
-                return "User data: " + user.toString();
+                return user;
             } else {
-                return "User not found";
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
             }
         } else {
-            return "User not logged in";
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not logged in");
         }
     }
 

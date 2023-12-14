@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.emssions.GreenhouseGasEmissions.entity.User;
@@ -18,11 +20,12 @@ public class UserService {
 
     private Map<String, User> sessionMap = new HashMap<>();
 
-    public void registerUser(User user) {
+    public ResponseEntity<String> registerUser(User user) {
         if (userRepository.existsById(user.getUsername())) {
-            throw new RuntimeException("Username already exists. Please choose a different username.");
+            return new ResponseEntity<>("Username already exists. Please choose a different username.", HttpStatus.CONFLICT);
         }
         userRepository.save(user);
+        return new ResponseEntity<>("User registered successfully!", HttpStatus.CREATED);
     }
 
     public String loginUser(String username, String password) {

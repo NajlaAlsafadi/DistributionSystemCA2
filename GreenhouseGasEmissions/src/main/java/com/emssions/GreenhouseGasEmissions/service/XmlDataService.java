@@ -29,9 +29,7 @@ public class XmlDataService {
 		this.xmlDataRepository = xmlDataRepository;
 	}
 
-	public List<XmlData> findByCategory(String category) {
-		return xmlDataRepository.findByCategory(category.trim());
-	}
+
 
 	public String fetchDescription(String category) throws IOException {
 		Document document = Jsoup.connect("https://www.ipcc-nggip.iges.or.jp/EFDB/find_ef.php").get();
@@ -50,10 +48,6 @@ public class XmlDataService {
 		}
 
 		return null;
-	}
-
-	public void clearXmlData() {
-		xmlDataRepository.deleteAll();
 	}
 
 	public void parseXmlAndSave() throws Exception {
@@ -89,7 +83,13 @@ public class XmlDataService {
 			}
 		}
 	}
-
+	
+	public List<XmlData> findByCategory(String category) {
+		return xmlDataRepository.findByCategory(category.trim());
+	}
+	public void clearXmlData() {
+		xmlDataRepository.deleteAll();
+	}
 	public List<XmlData> getAllData() {
 		return xmlDataRepository.findAll();
 	}
